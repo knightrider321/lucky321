@@ -1,0 +1,15 @@
+.exec ffmpeg -i "${TMP_DOWNLOAD_DIRECTORY}/ffmpeginput.mp4" -vf "drawtext=text='@ReQuestChat':x=10:y=H-th-10:fontsize=15:fontcolor=#cee3f8" -vcodec h264 -strict -2 "${TMP_DOWNLOAD_DIRECTORY}/ffmpegoutput.mp4"
+.exec curl -F "file=@./DOWNLOADS/file.name" https://bayfiles.com/api/upload
+.exec curl -F "file=@./DOWNLOADS/file.name" https://megaupload.is/api/upload
+.exec curl -F "file=@./DOWNLOADS/file.name" https://anonfiles.com/api/upload
+.exec curl -F file="@./DOWNLOADS/file.name" https://api.anonymousfiles.io/
+.exec curl --upload-file "./DOWNLOADS/file.name" https://transfer.sh/file.name
+.exec curl -X POST --data-binary "@test.png" -H "filename: custom.file.name.png" "https://filebin.net"
+.exec curl -X POST --data-binary "@test.png" -H "filename: custom.f
+.eval import string
+import asyncio
+for I in string.ascii_lowercase:
+  async for user in event.client.iter_participants(entity=event.chat_id, limit=1, search=I):
+    await event.reply(f"[{I}](tg://user?id={user.id})")
+  await asyncio.sleep(5)
+  git pull upstream master
